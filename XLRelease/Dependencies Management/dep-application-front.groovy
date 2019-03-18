@@ -1,6 +1,6 @@
 // Exported from:        http://kubuntu:5516/#/templates/Folder1a787388922e47c08684a591a930e33e-Releasead9d37c72cce402a8593d9992428edab/releasefile
 // XL Release version:   8.5.3
-// Date created:         Mon Mar 18 08:34:17 CET 2019
+// Date created:         Mon Mar 18 13:50:01 CET 2019
 
 xlr {
   template('dep-application-front') {
@@ -48,7 +48,7 @@ xlr {
     }
     scheduledStartDate Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2018-09-18T09:00:00+0200')
     scriptUsername 'admin'
-    scriptUserPassword '{aes:v0}ByT/1fmWZiOPux+kqgnyhWAiIneDhWIVpiTeENFAV3s='
+    scriptUserPassword '{aes:v0}16QuEDJwtGGSjHYfmUR3VR+M7dqZduYTgE+ZaDWYZWA='
     phases {
       phase('BUILD DAR') {
         color '#0099CC'
@@ -76,7 +76,7 @@ xlr {
               script '/opt/xebialabs/devops-utilities/dar-maker.sh -a front -v ${next-version}'
               address 'localhost'
               username 'jcla'
-              password '{aes:v0}v/QxUVidgq+X9MnoOa8KFngo5etmcpxu2wdQjlbKxdw='
+              password '{aes:v0}w77vnHG+c7qc0mdJU67f7E8QlmddUdaQ3TEtpGm+GIQ='
             }
           }
         }
@@ -150,6 +150,9 @@ xlr {
           gate('Release to PRO') {
             owner 'admin'
             plannedDuration 90000
+          }
+          manual('Prueba carrefour') {
+            
           }
         }
       }
