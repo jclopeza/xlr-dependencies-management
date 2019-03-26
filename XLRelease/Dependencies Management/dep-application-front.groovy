@@ -1,6 +1,6 @@
 // Exported from:        http://kubuntu:5516/#/templates/Folder1a787388922e47c08684a591a930e33e-Releasead9d37c72cce402a8593d9992428edab/releasefile
 // XL Release version:   8.5.3
-// Date created:         Mon Mar 18 13:50:01 CET 2019
+// Date created:         Tue Mar 26 11:41:22 CET 2019
 
 xlr {
   template('dep-application-front') {
@@ -48,7 +48,7 @@ xlr {
     }
     scheduledStartDate Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2018-09-18T09:00:00+0200')
     scriptUsername 'admin'
-    scriptUserPassword '{aes:v0}16QuEDJwtGGSjHYfmUR3VR+M7dqZduYTgE+ZaDWYZWA='
+    scriptUserPassword '{aes:v0}8ATLLDl1mFeZh4AEDxHV4HJ3SgMj1v51qz245zl5ymo='
     phases {
       phase('BUILD DAR') {
         color '#0099CC'
@@ -76,7 +76,7 @@ xlr {
               script '/opt/xebialabs/devops-utilities/dar-maker.sh -a front -v ${next-version}'
               address 'localhost'
               username 'jcla'
-              password '{aes:v0}w77vnHG+c7qc0mdJU67f7E8QlmddUdaQ3TEtpGm+GIQ='
+              password '{aes:v0}IYcP3Icfv0XxsJfU5aJ5HFhKld6xUS9Zp9WIzNs7oOo='
             }
           }
         }
@@ -109,6 +109,9 @@ xlr {
           }
           gate('Release to PRE') {
             owner 'admin'
+          }
+          manual('Test') {
+            
           }
         }
       }
@@ -151,9 +154,6 @@ xlr {
             owner 'admin'
             plannedDuration 90000
           }
-          manual('Prueba carrefour') {
-            
-          }
         }
       }
       phase('PRO') {
@@ -162,10 +162,12 @@ xlr {
           gate('Check requirements') {
             owner 'admin'
             plannedDuration 90000
+            locked true
           }
           gate('Ok Release Manager') {
             owner 'admin'
             plannedDuration 90000
+            locked true
           }
           custom('Update Ok Release Manager') {
             script {
